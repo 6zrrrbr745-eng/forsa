@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100b1c">
+<meta name="description" content="فرصة FORSA - منصة الخدمات الرقمية في العراق">
+<title>فرصة FORSA | خدماتك الرقمية</title>
+<style>
+*{box-sizing:border-box}
+:root{
+ --bg:#100b1c;--panel:#1b1429;--panel2:#241a36;
+ --purple:#9b5cff;--purple2:#7138d5;
+ --white:#fff;--muted:#aaa0bd;--green:#36c98b;
+}
+body{margin:0;background:var(--bg);color:var(--white);
+ font-family:Arial,Tahoma,sans-serif;line-height:1.7}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+header{padding:18px 6%;display:flex;align-items:center;
+ justify-content:space-between;border-bottom:1px solid #302442;
+ position:sticky;top:0;background:#100b1cf2;z-index:10}
+.logo{font-size:27px;font-weight:bold;color:white}
+.logo span{color:var(--purple)}
+nav{display:flex;gap:20px;align-items:center}
+nav a{color:#ddd;text-decoration:none}
+.btn{border:0;border-radius:12px;padding:11px 19px;
+ background:var(--purple);color:white;font-weight:bold}
+.btn:hover{background:var(--purple2)}
+.btn.secondary{background:#302442}
+.hero{padding:75px 7% 60px;text-align:center;
+ background:radial-gradient(ellipse at top,#39205d 0%,#100b1c 65%)}
+.hero h1{font-size:clamp(32px,6vw,58px);margin:0 0 15px}
+.hero h1 span{color:var(--purple)}
+.hero p{color:var(--muted);font-size:18px}
+.hero .btn{margin-top:18px;padding:14px 30px}
+.stats{display:flex;justify-content:center;gap:45px;
+ flex-wrap:wrap;margin-top:35px;color:var(--muted)}
+.stats strong{display:block;color:white;font-size:23px}
+.container{width:90%;max-width:1200px;margin:40px auto}
+.section-title{font-size:26px;margin-bottom:20px}
+.search{display:flex;gap:10px;margin-bottom:22px}
+.search input{flex:1;min-width:0}
+input,textarea,select{width:100%;padding:13px 14px;
+ border:1px solid #40334f;border-radius:11px;
+ background:#171022;color:white;outline:none}
+input:focus,textarea:focus,select:focus{border-color:var(--purple)}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:25px}
+.filter{border:1px solid #453456;background:var(--panel);
+ color:#ddd;border-radius:30px;padding:9px 17px}
+.filter.active{background:var(--purple);border-color:var(--purple)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:17px}
+.card{background:var(--panel);border:1px solid #302442;
+ border-radius:17px;padding:20px;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:var(--purple)}
+.card .emoji{font-size:35px}
+.card h3{margin:8px 0}
+.card p{color:var(--muted);font-size:14px;min-height:45px}
+.price{font-size:21px;font-weight:bold;color:#c49aff;margin:12px 0}
+.card button{width:100%}
+.panel{background:var(--panel);border:1px solid #302442;
+ border-radius:17px;padding:22px;margin-bottom:20px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.cart-item{display:flex;justify-content:space-between;gap:12px;
+ padding:12px 0;border-bottom:1px solid #382b49}
+.small{font-size:13px;color:var(--muted)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-grid .full{grid-column:1/-1}
+label{display:block;margin-bottom:6px;color:#d9d0e7}
+footer{text-align:center;padding:35px;color:var(--muted);
+ border-top:1px solid #302442;margin-top:50px}
+.hidden{display:none!important}
+.notice{padding:12px;border-radius:10px;background:#302442;
+ color:#d9c5ff;margin:12px 0}
+.success{color:var(--green)}
+.danger{color:#ff7b88}
+@media(max-width:650px){
+ header{padding:13px 5%}nav{gap:10px}nav a{font-size:13px}
+ .hero{padding:55px 5%}.container{width:92%}
+ .form-grid{grid-template-columns:1fr}
+ .form-grid .full{grid-column:auto}
+ .stats{gap:22px}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="logo">فرصة <span>FORSA</span></div>
+ <nav>
+  <a href="#home">الرئيسية</a>
+  <a href="#services">الخدمات</a>
+  <a href="#orders">طلباتي</a>
+  <button class="btn" onclick="showCart()">السلة 🛒 <span id="cartCount">0</span></button>
+ </nav>
+</header>
+
+<section class="hero" id="home">
+ <h1>كل خدماتك الرقمية <span>بفرصة واحدة</span></h1>
+ <p>منصة فرصة للخدمات الرقمية في العراق. اختار خدمتك واطلبها بسهولة.</p>
+ <a href="#services"><button class="btn">اكتشف الخدمات ←</button></a>
+ <div class="stats">
+  <div><strong>12+</strong>خدمة رقمية</div>
+  <div><strong>6</strong>أقسام متنوعة</div>
+  <div><strong>24/7</strong>استقبال الطلبات</div>
+ </div>
+</section>
+
+<main class="container" id="services">
+ <h2 class="section-title">اكتشف خدماتنا</h2>
+ <div class="search">
+  <input id="searchInput" placeholder="ابحث عن خدمة..." oninput="renderServices()">
+ </div>
+ <div class="filters" id="filters"></div>
+ <div class="grid" id="servicesGrid"></div>
+</main>
+
+<section class="container hidden" id="cartSection">
+ <div class="panel">
+  <div class="row">
+   <h2>سلة المشتريات 🛒</h2>
+   <button class="btn secondary" onclick="hideCart()">إغلاق</button>
+  </div>
+  <div id="cartItems"></div>
+  <h3>المجموع: <span id="cartTotal">0</span> د.ع</h3>
+  <button class="btn" onclick="showCheckout()">إكمال الطلب</button>
+ </div>
+</section>
+
+<section class="container hidden" id="checkoutSection">
+ <div class="panel">
+  <h2>إكمال الطلب</h2>
+  <form id="orderForm">
+   <div class="form-grid">
+    <div>
+     <label>الاسم الكامل</label>
+     <input id="customerName" required placeholder="اسمك الكامل">
+    </div>
+    <div>
+     <label>رقم الهاتف</label>
+     <input id="customerPhone" required placeholder="07xxxxxxxxx" inputmode="tel">
+    </div>
+    <div>
+     <label>المحافظة</label>
+     <select id="customerCity" required>
+      <option value="">اختر المحافظة</option>
+      <option>بغداد</option><option>البصرة</option>
+      <option>نينوى</option><option>أربيل</option>
+      <option>النجف</option><option>كربلاء</option>
+      <option>ذي قار</option><option>ديالى</option>
+      <option>الأنبار</option><option>بابل</option>
+      <option>واسط</option><option>ميسان</option>
+      <option>المثنى</option><option>القادسية</option>
+      <option>كركوك</option><option>صلاح الدين</option>
+      <option>دهوك</option><option>السليمانية</option>
+     </select>
+    </div>
+    <div class="full">
+     <label>تفاصيل إضافية عن طلبك</label>
+     <textarea id="orderDetails" rows="4" placeholder="اكتب تفاصيل الخدمة المطلوبة..."></textarea>
+    </div>
+   </div>
+   <p>المجموع: <strong id="checkoutTotal">0</strong> د.ع</p>
+   <button class="btn" type="submit">إرسال الطلب</button>
+   <button class="btn secondary" type="button" onclick="hideCheckout()">رجوع</button>
+  </form>
+  <div id="orderMessage"></div>
+ </div>
+</section>
+
+<section class="container" id="orders">
+ <div class="panel">
+  <h2>متابعة الطلب</h2>
+  <p class="small">أدخل رقم الطلب ورقم الهاتف لمعرفة حالة طلبك.</p>
+  <input id="trackId" placeholder="رقم الطلب">
+  <br><br>
+  <input id="trackPhone" placeholder="رقم الهاتف" inputmode="tel">
+  <br><br>
+  <button class="btn" onclick="trackOrder()">متابعة</button>
+  <div id="trackResult"></div>
+ </div>
+</section>
+
+<section class="container" id="admin">
+ <div class="panel">
+  <h2>إدارة المنصة</h2>
+  <p class="small">لوحة محلية للتجربة على هذا الجهاز فقط.</p>
+  <button class="btn secondary" onclick="adminLogin()">دخول الإدارة</button>
+  <div id="adminArea" class="hidden">
+   <h3>الطلبات المسجلة</h3>
+   <div id="adminOrders"></div>
+   <button class="btn" onclick="exportCSV()">تصدير CSV</button>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="logo">فرصة <span>FORSA</span></div>
+ <p>منصة الخدمات الرقمية في العراق</p>
+ <p>© 2026 FORSA - جميع الحقوق محفوظة</p>
+</footer>
+
+<script>
+const services=[
+ {id:1,name:"كتابة التقارير",cat:"المستندات",emoji:"📄",desc:"إعداد وتنسيق التقارير والمستندات.",price:10000},
+ {id:2,name:"إعداد البحوث",cat:"التعليم",emoji:"📚",desc:"مساعدة في إعداد وتنظيم البحوث.",price:15000},
+ {id:3,name:"العروض التقديمية",cat:"التصميم",emoji:"📊",desc:"تصميم عروض PowerPoint احترافية.",price:10000},
+ {id:4,name:"تصميم الشعارات",cat:"التصميم",emoji:"🎨",desc:"تصميم شعار مميز لمشروعك.",price:15000},
+ {id:5,name:"السيرة الذاتية CV",cat:"الأعمال",emoji:"💼",desc:"إنشاء سيرة ذاتية احترافية.",price:8000},
+ {id:6,name:"ترجمة النصوص",cat:"المستندات",emoji:"🌐",desc:"ترجمة وتنسيق النصوص والمستندات.",price:5000},
+ {id:7,name:"إدارة صفحات التواصل",cat:"الأعمال",emoji:"📱",desc:"خدمات تنظيم وإدارة صفحات التواصل.",price:20000},
+ {id:8,name:"تصميم منشورات",cat:"التصميم",emoji:"🖼️",desc:"تصميم منشورات للسوشيال ميديا.",price:7000},
+ {id:9,name:"خدمات الذكاء الاصطناعي",cat:"الذكاء الاصطناعي",emoji:"🤖",desc:"مساعدة في استخدام أدوات الذكاء الاصطناعي.",price:10000},
+ {id:10,name:"تفريغ الملفات الصوتية",cat:"الخدمات الرقمية",emoji:"🎙️",desc:"تحويل التسجيلات الصوتية إلى نصوص.",price:7000},
+ {id:11,name:"إنشاء ملفات Excel",cat:"الخدمات الرقمية",emoji:"📈",desc:"تنظيم البيانات والجداول والحسابات.",price:10000},
+ {id:12,name:"إنشاء مواقع بسيطة",cat:"الخدمات الرقمية",emoji:"💻",desc:"تصميم صفحات ومواقع إلكترونية بسيطة.",price:30000}
+];
+
+const categories=["الكل","الذكاء الاصطناعي","التعليم","المستندات","التصميم","الأعمال","الخدمات الرقمية"];
+let activeCategory="الكل";
+let cart=JSON.parse(localStorage.getItem("forsa_cart")||"[]");
+let orders=JSON.parse(localStorage.getItem("forsa_orders")||"[]");
+
+const money=n=>Number(n).toLocaleString("en-US");
+function save(){
+ localStorage.setItem("forsa_cart",JSON.stringify(cart));
+ localStorage.setItem("forsa_orders",JSON.stringify(orders));
+}
+function renderFilters(){
+ document.getElementById("filters").innerHTML=categories.map(c=>
+ `<button class="filter ${c===activeCategory?"active":""}" onclick="setCategory('${c}')">${c}</button>`
+ ).join("");
+}
+function setCategory(c){activeCategory=c;renderFilters();renderServices()}
+function renderServices(){
+ const q=document.getElementById("searchInput").value.trim().toLowerCase();
+ const list=services.filter(s=>(activeCategory==="الكل"||s.cat===activeCategory)&&
+ (s.name.toLowerCase().includes(q)||s.desc.toLowerCase().includes(q)));
+ document.getElementById("servicesGrid").innerHTML=list.length?list.map(s=>`
+ <article class="card">
+  <div class="emoji">${s.emoji}</div>
+  <div class="small">${s.cat}</div>
+  <h3>${s.name}</h3>
+  <p>${s.desc}</p>
+  <div class="price">${money(s.price)} د.ع</div>
+  <button class="btn" onclick="addToCart(${s.id})">أضف إلى السلة +</button>
+ </article>`).join(""):"<p>لا توجد خدمات مطابقة للبحث.</p>";
+}
+function addToCart(id){
+ const found=cart.find(x=>x.id===id);
+ if(found)found.qty++;else cart.push({id,qty:1});
+ save();updateCart();alert("تمت إضافة الخدمة إلى السلة");
+}
+function updateCart(){
+ document.getElementById("cartCount").textContent=cart.reduce((a,b)=>a+b.qty,0);
+ const total=cart.reduce((a,b)=>a+services.find(s=>s.id===b.id).price*b.qty,0);
+ document.getElementById("cartTotal").textContent=money(total);
+ document.getElementById("checkoutTotal").textContent=money(total);
+ document.getElementById("cartItems").innerHTML=cart.length?cart.map(x=>{
+ const s=services.find(y=>y.id===x.id);
+ return `<div class="cart-item">
+ <div>${s.emoji} ${s.name}<br><span class="small">${money(s.price)} د.ع × ${x.qty}</span></div>
+ <div>
+ <button class="btn secondary" onclick="changeQty(${x.id},-1)">−</button>
+ ${x.qty}
+ <button class="btn secondary" onclick="changeQty(${x.id},1)">+</button>
+ </div></div>`;
+ }).join(""):"<p>السلة فارغة حالياً.</p>";
+}
+function changeQty(id,n){
+ const item=cart.find(x=>x.id===id);
+ if(!item)return;
+ item.qty+=n;if(item.qty<=0)cart=cart.filter(x=>x.id!==id);
+ save();updateCart();
+}
+function showCart(){
+ document.getElementById("cartSection").classList.remove("hidden");
+ document.getElementById("checkoutSection").classList.add("hidden");
+ updateCart();document.getElementById("cartSection").scrollIntoView({behavior:"smooth"});
+}
+function hideCart(){document.getElementById("cartSection").classList.add("hidden")}
+function showCheckout(){
+ if(!cart.length){alert("السلة فارغة");return}
+ document.getElementById("checkoutSection").classList.remove("hidden");
+ document.getElementById("checkoutSection").scrollIntoView({behavior:"smooth"});
+}
+function hideCheckout(){document.getElementById("checkoutSection").classList.add("hidden")}
+document.getElementById("orderForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ if(!cart.length){alert("السلة فارغة");return}
+ const id="FRS-"+Date.now().toString().slice(-8);
+ const items=cart.map(x=>({name:services.find(s=>s.id===x.id).name,qty:x.qty,price:services.find(s=>s.id===x.id).price}));
+ const total=cart.reduce((a,b)=>a+services.find(s=>s.id===b.id).price*b.qty,0);
+ const order={
+  id,
+  name:document.getElementById("customerName").value.trim(),
+  phone:document.getElementById("customerPhone").value.trim(),
+  city:document.getElementById("customerCity").value,
+  details:document.getElementById("orderDetails").value.trim(),
+  items,total,status:"جديد",date:new Date().toLocaleString("ar-IQ")
+ };
+ orders.unshift(order);cart=[];save();updateCart();
+ document.getElementById("orderMessage").innerHTML=
+ `<div class="notice success">تم تسجيل طلبك محلياً. رقم الطلب: <strong>${id}</strong><br>احتفظ بهذا الرقم لمتابعة الطلب.</div>`;
+ this.reset();hideCart();
+});
+function trackOrder(){
+ const id=document.getElementById("trackId").value.trim();
+ const phone=document.getElementById("trackPhone").value.trim();
+ const o=orders.find(x=>x.id===id&&x.phone===phone);
+ document.getElementById("trackResult").innerHTML=o?
+ `<div class="notice">رقم الطلب: ${o.id}<br>الحالة: <strong>${o.status}</strong><br>التاريخ: ${o.date}</div>`:
+ `<p class="danger">لم يتم العثور على طلب مطابق في بيانات هذا الجهاز.</p>`;
+}
+function adminLogin(){
+ const pin=prompt("أدخل رمز الإدارة:");
+ if(pin!=="1234"){alert("رمز غير صحيح");return}
+ document.getElementById("adminArea").classList.remove("hidden");
+ renderAdmin();
+}
+function renderAdmin(){
+ document.getElementById("adminOrders").innerHTML=orders.length?orders.map(o=>`
+ <div class="panel">
+ <strong>${o.name}</strong> - ${o.phone}<br>
+ رقم الطلب: ${o.id}<br>المحافظة: ${o.city}<br>
+ الخدمات: ${o.items.map(x=>x.name+" × "+x.qty).join("، ")}<br>
+ المجموع: ${money(o.total)} د.ع<br>
+ الحالة: <select onchange="changeStatus('${o.id}',this.value)">
+ ${["جديد","قيد التنفيذ","مكتمل","ملغي"].map(s=>`<option ${o.status===s?"selected":""}>${s}</option>`).join("")}
+ </select>
+ <p class="small">${o.date}</p>
+ </div>`).join(""):"<p>لا توجد طلبات.</p>";
+}
+function changeStatus(id,status){
+ const o=orders.find(x=>x.id===id);if(o){o.status=status;save();renderAdmin()}
+}
+function exportCSV(){
+ const rows=[["رقم الطلب","الاسم","الهاتف","المحافظة","المجموع","الحالة","التاريخ"],
+ ...orders.map(o=>[o.id,o.name,o.phone,o.city,o.total,o.status,o.date])];
+ const csv="\uFEFF"+rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(",")).join("\n");
+ const a=document.createElement("a");
+ a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"}));
+ a.download="forsa-orders.csv";a.click();URL.revokeObjectURL(a.href);
+}
+renderFilters();renderServices();updateCart();
+</script>
+</body>
+</html>

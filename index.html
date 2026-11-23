@@ -3,84 +3,99 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#100b1c">
 <meta name="description" content="فرصة FORSA - منصة الخدمات الرقمية في العراق">
 <title>فرصة FORSA | خدماتك الرقمية</title>
 <style>
+:root{--bg:#100b1c;--panel:#1b1429;--panel2:#2a1e3c;--line:#3a2b50;--purple:#9855f5;--purple2:#7138d5;--white:#fff;--muted:#b7acc8;--green:#36c98b;--red:#ff7b88}
 *{box-sizing:border-box}
-:root{--bg:#100b1c;--panel:#1b1429;--panel2:#2b2040;--purple:#9b5cff;--purple2:#7138d5;--white:#fff;--muted:#aaa0bd;--green:#36c98b;--red:#ff7b88}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,Tahoma,sans-serif;line-height:1.7}
 button,input,textarea,select{font:inherit}
 button{cursor:pointer}
-header{padding:14px 5%;display:flex;align-items:center;justify-content:space-between;gap:14px;border-bottom:1px solid #302442;position:sticky;top:0;background:#100b1cf5;z-index:10;backdrop-filter:blur(12px)}
-.logo{font-size:25px;font-weight:bold;color:white;white-space:nowrap}.logo span{color:var(--purple)}
-nav{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
-nav a{color:#ddd;text-decoration:none;font-size:15px}
-.btn{border:0;border-radius:12px;padding:11px 18px;background:var(--purple);color:white;font-weight:bold}
-.btn:hover{background:var(--purple2)}.btn:disabled{opacity:.55;cursor:wait}
-.btn.secondary{background:#302442}.btn.outline{background:transparent;border:1px solid #59436f}
-.hero{padding:70px 7% 55px;text-align:center;background:radial-gradient(ellipse at top,#39205d 0%,#100b1c 67%)}
-.hero h1{font-size:clamp(31px,6vw,56px);line-height:1.35;margin:0 0 15px}.hero h1 span{color:var(--purple)}
-.hero p{color:var(--muted);font-size:18px}.hero .btn{margin-top:18px;padding:14px 30px}
-.stats{display:flex;justify-content:center;gap:42px;flex-wrap:wrap;margin-top:32px;color:var(--muted)}
-.stats strong{display:block;color:white;font-size:23px}
-.container{width:91%;max-width:1180px;margin:42px auto}
-.section-title{font-size:27px;margin-bottom:20px}
-.search{display:flex;gap:10px;margin-bottom:20px}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:20;background:#100b1cf5;border-bottom:1px solid var(--line);padding:14px 5%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-size:26px;font-weight:800;white-space:nowrap}
+.logo span{color:var(--purple)}
+nav{display:flex;align-items:center;gap:18px}
+nav a{color:#e5dff0}
+nav a:hover{color:var(--purple)}
+.btn{border:0;border-radius:13px;padding:12px 20px;background:var(--purple);color:#fff;font-weight:700;transition:.2s}
+.btn:hover{background:var(--purple2)}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+.btn.secondary{background:var(--panel2);border:1px solid var(--line)}
+.btn.ghost{background:transparent;border:1px solid var(--line)}
+.hero{text-align:center;padding:72px 6% 55px;background:radial-gradient(ellipse at top,#39205d 0%,#100b1c 68%)}
+.hero h1{font-size:clamp(30px,6vw,58px);line-height:1.35;margin:0 0 14px}
+.accent{color:var(--purple)}
+.hero p{color:var(--muted);font-size:18px;max-width:720px;margin:12px auto}
+.stats{display:flex;justify-content:center;gap:42px;flex-wrap:wrap;margin-top:34px;color:var(--muted)}
+.stats strong{display:block;color:white;font-size:24px}
+.container{width:min(1160px,92%);margin:42px auto}
+.section-title{font-size:27px;margin:0 0 20px}
+.search{display:flex;gap:10px;margin-bottom:18px}
 .search input{flex:1;min-width:0}
-input,textarea,select{width:100%;padding:14px;border:1px solid #40334f;border-radius:12px;background:#171022;color:white;outline:none}
-input:focus,textarea:focus,select:focus{border-color:var(--purple)}
-select option{background:#171022;color:white}
-.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:24px}
-.filter{border:1px solid #453456;background:var(--panel);color:#ddd;border-radius:30px;padding:9px 16px}
+input,textarea,select{width:100%;padding:14px;border:1px solid #49385e;border-radius:13px;background:#171022;color:#fff;outline:none}
+input:focus,textarea:focus,select:focus{border-color:var(--purple);box-shadow:0 0 0 2px #9855f533}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0 25px}
+.filter{padding:9px 16px;border-radius:30px;background:var(--panel);border:1px solid var(--line);color:#e5dff0}
 .filter.active{background:var(--purple);border-color:var(--purple)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:16px}
-.card{background:var(--panel);border:1px solid #302442;border-radius:17px;padding:19px;transition:.2s}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:17px}
+.card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:19px;padding:20px}
+.card{transition:.2s}
 .card:hover{transform:translateY(-3px);border-color:var(--purple)}
-.emoji{font-size:34px}.card h3{margin:8px 0}.card p{color:var(--muted);font-size:14px;min-height:45px}
-.price{font-size:21px;font-weight:bold;color:#c49aff;margin:12px 0}.card button{width:100%}
-.panel{background:var(--panel);border:1px solid #302442;border-radius:18px;padding:22px;margin-bottom:20px}
+.emoji{font-size:36px}
+.card h3{margin:8px 0}
+.card p{color:var(--muted);font-size:14px;min-height:46px}
+.price{font-size:21px;color:#c9a5ff;font-weight:800;margin:12px 0}
+.card .btn{width:100%}
+.panel{margin-bottom:20px}
 .row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.cart-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #382b49}
-.small{font-size:13px;color:var(--muted)}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-.form-grid .full{grid-column:1/-1}label{display:block;margin-bottom:6px;color:#d9d0e7}
-footer{text-align:center;padding:32px;color:var(--muted);border-top:1px solid #302442;margin-top:50px}
-.hidden{display:none!important}.notice{padding:13px;border-radius:12px;background:#302442;color:#e1d2ff;margin:13px 0;overflow-wrap:anywhere}
-.success{color:var(--green)}.danger{color:var(--red)}.muted{color:var(--muted)}
-.admin-order{background:#211832;border:1px solid #3a2b4d;border-radius:13px;padding:15px;margin:12px 0;overflow-wrap:anywhere}
-.admin-order select{margin-top:10px}.loading{opacity:.7;pointer-events:none}
-@media(max-width:680px){
- header{padding:12px 4%;align-items:flex-start;flex-wrap:wrap}
- nav{width:100%;justify-content:space-between;gap:8px}
- nav a{font-size:13px}
+.small{font-size:14px;color:var(--muted)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-grid .full{grid-column:1/-1}
+label{display:block;margin-bottom:7px;color:#e0d7ed}
+.cart-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}
+.qty{display:flex;align-items:center;gap:9px}
+.qty button{padding:6px 12px}
+.notice{padding:14px;border-radius:13px;background:#302442;color:#e5d6ff;margin:14px 0;overflow-wrap:anywhere}
+.success{color:var(--green)}
+.error{color:var(--red)}
+.hidden{display:none!important}
+.status{display:inline-block;padding:3px 10px;border-radius:20px;background:#302442;color:#d8bdff;font-weight:700}
+footer{text-align:center;padding:34px 15px;color:var(--muted);border-top:1px solid var(--line);margin-top:50px}
+hr{border:0;border-top:1px solid var(--line);margin:20px 0}
+@media(max-width:700px){
+ header{align-items:flex-start;flex-wrap:wrap}
+ nav{order:3;width:100%;justify-content:space-between;gap:8px}
+ nav a{font-size:14px}
  .logo{font-size:23px}
- .hero{padding:52px 5%}
- .container{width:92%;margin:30px auto}
+ .hero{padding:54px 5%}
+ .container{margin:30px auto}
  .form-grid{grid-template-columns:1fr}
  .form-grid .full{grid-column:auto}
  .stats{gap:22px}
- .panel{padding:17px}
  .search{flex-direction:column}
 }
 </style>
 </head>
 <body>
+
 <header>
-  <div class="logo">فرصة <span>FORSA</span></div>
+  <a class="logo" href="#home">فرصة <span>FORSA</span></a>
   <nav>
     <a href="#home">الرئيسية</a>
     <a href="#services">الخدمات</a>
-    <a href="#orders">طلباتي</a>
-    <button class="btn" onclick="showCart()">السلة 🛒 <span id="cartCount">0</span></button>
+    <a href="#track">طلباتي</a>
+    <button class="btn" type="button" onclick="openCart()">السلة 🛒 <span id="cartCount">0</span></button>
   </nav>
 </header>
 
 <section class="hero" id="home">
-  <h1>كل خدماتك الرقمية <span>بفرصة واحدة</span></h1>
-  <p>منصة فرصة للخدمات الرقمية في العراق. اختار خدمتك واطلبها بسهولة.</p>
-  <a href="#services"><button class="btn">اكتشف الخدمات ←</button></a>
+  <h1>كل خدماتك الرقمية <span class="accent">بفرصة واحدة</span></h1>
+  <p>منصة فرصة للخدمات الرقمية في العراق. اختار خدمتك، أرسل طلبك، وتابع حالته من أي مكان.</p>
+  <a class="btn" href="#services">اكتشف الخدمات ←</a>
   <div class="stats">
     <div><strong>12+</strong>خدمة رقمية</div>
     <div><strong>6</strong>أقسام متنوعة</div>
@@ -90,14 +105,20 @@ footer{text-align:center;padding:32px;color:var(--muted);border-top:1px solid #3
 
 <main class="container" id="services">
   <h2 class="section-title">اكتشف خدماتنا</h2>
-  <div class="search"><input id="searchInput" placeholder="ابحث عن خدمة..." oninput="renderServices()"></div>
+  <div class="search">
+    <input id="searchInput" placeholder="ابحث عن خدمة..." autocomplete="off">
+    <button class="btn ghost" onclick="clearSearch()">مسح</button>
+  </div>
   <div class="filters" id="filters"></div>
   <div class="grid" id="servicesGrid"></div>
 </main>
 
 <section class="container hidden" id="cartSection">
   <div class="panel">
-    <div class="row"><h2>سلة المشتريات 🛒</h2><button class="btn secondary" onclick="hideCart()">إغلاق</button></div>
+    <div class="row">
+      <h2>سلة المشتريات 🛒</h2>
+      <button class="btn secondary" onclick="closeCart()">إغلاق</button>
+    </div>
     <div id="cartItems"></div>
     <h3>المجموع: <span id="cartTotal">0</span> د.ع</h3>
     <button class="btn" onclick="showCheckout()">إكمال الطلب</button>
@@ -107,39 +128,60 @@ footer{text-align:center;padding:32px;color:var(--muted);border-top:1px solid #3
 <section class="container hidden" id="checkoutSection">
   <div class="panel">
     <h2>إكمال الطلب</h2>
+    <p class="small">تأكد من كتابة رقم هاتف صحيح حتى نتمكن من التواصل معك.</p>
     <form id="orderForm">
       <div class="form-grid">
-        <div><label for="customerName">الاسم الكامل</label><input id="customerName" maxlength="120" required placeholder="اسمك الكامل"></div>
-        <div><label for="customerPhone">رقم الهاتف</label><input id="customerPhone" maxlength="30" required placeholder="07xxxxxxxxx" inputmode="tel"></div>
-        <div><label for="customerCity">المحافظة</label>
+        <div>
+          <label for="customerName">الاسم الكامل</label>
+          <input id="customerName" maxlength="120" required placeholder="اسمك الكامل">
+        </div>
+        <div>
+          <label for="customerPhone">رقم الهاتف</label>
+          <input id="customerPhone" maxlength="30" required inputmode="tel" placeholder="07xxxxxxxxx">
+        </div>
+        <div>
+          <label for="customerCity">المحافظة</label>
           <select id="customerCity" required>
             <option value="">اختر المحافظة</option>
-            <option>بغداد</option><option>البصرة</option><option>نينوى</option><option>أربيل</option>
-            <option>النجف</option><option>كربلاء</option><option>ذي قار</option><option>ديالى</option>
-            <option>الأنبار</option><option>بابل</option><option>واسط</option><option>ميسان</option>
-            <option>المثنى</option><option>القادسية</option><option>كركوك</option><option>صلاح الدين</option>
-            <option>دهوك</option><option>السليمانية</option>
+            <option>بغداد</option><option>البصرة</option><option>نينوى</option>
+            <option>أربيل</option><option>النجف</option><option>كربلاء</option>
+            <option>ذي قار</option><option>ديالى</option><option>الأنبار</option>
+            <option>بابل</option><option>واسط</option><option>ميسان</option>
+            <option>المثنى</option><option>القادسية</option><option>كركوك</option>
+            <option>صلاح الدين</option><option>دهوك</option><option>السليمانية</option>
           </select>
         </div>
-        <div class="full"><label for="orderDetails">تفاصيل إضافية عن طلبك</label><textarea id="orderDetails" rows="4" maxlength="3000" placeholder="اكتب تفاصيل الخدمة المطلوبة..."></textarea></div>
+        <div class="full">
+          <label for="orderDetails">تفاصيل إضافية (اختياري)</label>
+          <textarea id="orderDetails" rows="4" maxlength="3000" placeholder="اكتب تفاصيل الخدمة المطلوبة..."></textarea>
+        </div>
       </div>
       <p>المجموع: <strong id="checkoutTotal">0</strong> د.ع</p>
-      <button class="btn" id="submitOrderBtn" type="submit">إرسال الطلب</button>
+      <button class="btn" id="submitOrder" type="submit">إرسال الطلب</button>
       <button class="btn secondary" type="button" onclick="hideCheckout()">رجوع</button>
     </form>
     <div id="orderMessage" aria-live="polite"></div>
   </div>
 </section>
 
-<section class="container" id="orders">
+<section class="container" id="track">
   <div class="panel">
     <h2>متابعة الطلب</h2>
     <p class="small">أدخل رقم الطلب ورقم الهاتف لمعرفة حالة طلبك من قاعدة البيانات.</p>
-    <input id="trackId" placeholder="رقم الطلب مثل FRS-..." autocomplete="off">
-    <br><br>
-    <input id="trackPhone" placeholder="رقم الهاتف" inputmode="tel" autocomplete="tel">
-    <br><br>
-    <button class="btn" id="trackBtn" onclick="trackOrder()">متابعة</button>
+    <form id="trackForm">
+      <div class="form-grid">
+        <div>
+          <label for="trackId">رقم الطلب</label>
+          <input id="trackId" required placeholder="مثال: FRS-..." autocomplete="off">
+        </div>
+        <div>
+          <label for="trackPhone">رقم الهاتف</label>
+          <input id="trackPhone" required inputmode="tel" placeholder="رقم الهاتف">
+        </div>
+      </div>
+      <br>
+      <button class="btn" id="trackButton" type="submit">متابعة</button>
+    </form>
     <div id="trackResult" aria-live="polite"></div>
   </div>
 </section>
@@ -147,11 +189,15 @@ footer{text-align:center;padding:32px;color:var(--muted);border-top:1px solid #3
 <section class="container" id="admin">
   <div class="panel">
     <h2>إدارة المنصة</h2>
-    <p class="small">لوحة الإدارة تتصل بقاعدة البيانات المشتركة. أدخل رمز الإدارة السري عند تسجيل الدخول.</p>
+    <p class="small">الدخول يتطلب رمز الإدارة المحفوظ كـ Secret باسم ADMIN_TOKEN في إعدادات Worker.</p>
     <button class="btn secondary" onclick="adminLogin()">دخول الإدارة</button>
-    <button class="btn outline hidden" id="adminLogoutBtn" onclick="adminLogout()">تسجيل خروج</button>
+    <button class="btn ghost hidden" id="adminLogout" onclick="adminLogout()">خروج</button>
     <div id="adminArea" class="hidden">
-      <div class="row"><h3>الطلبات المسجلة</h3><button class="btn" onclick="loadAdminOrders()">تحديث الطلبات ↻</button></div>
+      <hr>
+      <div class="row">
+        <h3>الطلبات المسجلة</h3>
+        <button class="btn ghost" onclick="loadAdminOrders()">تحديث</button>
+      </div>
       <div id="adminOrders"></div>
     </div>
   </div>
@@ -164,8 +210,10 @@ footer{text-align:center;padding:32px;color:var(--muted);border-top:1px solid #3
 </footer>
 
 <script>
-// رابط الـ Worker الخاص بمشروع FORSA
-const API_URL = "https://forsa-api.8sg7hg7dwz.workers.dev";
+"use strict";
+
+const API_BASE = "https://forsa-api.8sg7hg7dwz.workers.dev";
+const apiUrl = path => new URL(path, API_BASE).toString();
 
 const services = [
  {id:1,name:"كتابة التقارير",cat:"المستندات",emoji:"📄",desc:"إعداد وتنسيق التقارير والمستندات.",price:10000},
@@ -184,206 +232,238 @@ const services = [
 
 const categories=["الكل","الذكاء الاصطناعي","التعليم","المستندات","التصميم","الأعمال","الخدمات الرقمية"];
 let activeCategory="الكل";
-let cart=[];
-try{cart=JSON.parse(localStorage.getItem("forsa_cart")||"[]");if(!Array.isArray(cart))cart=[];}catch(e){cart=[];}
+let cart=readCart();
 let adminToken="";
 
-const money=n=>Number(n||0).toLocaleString("en-US");
-const $=id=>document.getElementById(id);
-function saveCart(){localStorage.setItem("forsa_cart",JSON.stringify(cart));}
-function escapeHTML(value){
- return String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+function readCart(){
+ try{
+  const x=JSON.parse(localStorage.getItem("forsa_cart")||"[]");
+  return Array.isArray(x)?x.filter(v=>services.some(s=>s.id===Number(v.id))&&Number.isInteger(v.qty)&&v.qty>0&&v.qty<=50):[];
+ }catch{return []}
 }
-function showMessage(target,message,type="notice"){
- $(target).innerHTML=`<div class="${type}">${escapeHTML(message)}</div>`;
+function saveCart(){localStorage.setItem("forsa_cart",JSON.stringify(cart))}
+const money=n=>Number(n).toLocaleString("en-US");
+const el=id=>document.getElementById(id);
+
+function escapeHtml(value){
+ return String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function message(target,text,type="notice"){
+ el(target).innerHTML=`<div class="${type}">${escapeHtml(text)}</div>`;
 }
 function renderFilters(){
- $("filters").innerHTML=categories.map(c=>
-  `<button class="filter ${c===activeCategory?"active":""}" onclick="setCategory('${c}')">${c}</button>`
- ).join("");
+ el("filters").innerHTML=categories.map(c=>`<button type="button" class="filter ${c===activeCategory?"active":""}" data-cat="${escapeHtml(c)}">${escapeHtml(c)}</button>`).join("");
 }
-function setCategory(c){activeCategory=c;renderFilters();renderServices();}
 function renderServices(){
- const q=$("searchInput").value.trim().toLowerCase();
- const list=services.filter(s=>(activeCategory==="الكل"||s.cat===activeCategory)&&
-  (s.name.toLowerCase().includes(q)||s.desc.toLowerCase().includes(q)));
- $("servicesGrid").innerHTML=list.length?list.map(s=>`
-  <article class="card">
-   <div class="emoji">${s.emoji}</div><div class="small">${s.cat}</div>
-   <h3>${s.name}</h3><p>${s.desc}</p>
-   <div class="price">${money(s.price)} د.ع</div>
-   <button class="btn" onclick="addToCart(${s.id})">أضف إلى السلة +</button>
-  </article>`).join(""):"<p>لا توجد خدمات مطابقة للبحث.</p>";
+ const q=el("searchInput").value.trim().toLocaleLowerCase();
+ const list=services.filter(s=>(activeCategory==="الكل"||s.cat===activeCategory)&&(`${s.name} ${s.desc} ${s.cat}`).toLocaleLowerCase().includes(q));
+ el("servicesGrid").innerHTML=list.length?list.map(s=>`
+ <article class="card">
+  <div class="emoji">${s.emoji}</div>
+  <div class="small">${escapeHtml(s.cat)}</div>
+  <h3>${escapeHtml(s.name)}</h3>
+  <p>${escapeHtml(s.desc)}</p>
+  <div class="price">${money(s.price)} د.ع</div>
+  <button class="btn" type="button" onclick="addToCart(${s.id})">أضف إلى السلة +</button>
+ </article>`).join(""):"<p>لا توجد خدمات مطابقة للبحث.</p>";
 }
 function addToCart(id){
- const found=cart.find(x=>x.id===id);
- if(found)found.qty++;else cart.push({id,qty:1});
+ const item=cart.find(x=>x.id===id);
+ if(item){
+  if(item.qty>=50){alert("الحد الأعلى 50 من الخدمة الواحدة");return}
+  item.qty++;
+ }else cart.push({id,qty:1});
  saveCart();updateCart();alert("تمت إضافة الخدمة إلى السلة");
 }
-function cartTotal(){
- return cart.reduce((sum,item)=>{
-  const service=services.find(s=>s.id===item.id);
-  return sum+(service?service.price*item.qty:0);
- },0);
-}
 function updateCart(){
- cart=cart.filter(x=>services.some(s=>s.id===x.id)&&Number.isInteger(x.qty)&&x.qty>0);
- $("cartCount").textContent=cart.reduce((a,b)=>a+b.qty,0);
- $("cartTotal").textContent=money(cartTotal());
- $("checkoutTotal").textContent=money(cartTotal());
- $("cartItems").innerHTML=cart.length?cart.map(x=>{
+ const count=cart.reduce((a,b)=>a+b.qty,0);
+ const total=cart.reduce((sum,x)=>sum+services.find(s=>s.id===x.id).price*x.qty,0);
+ el("cartCount").textContent=count;
+ el("cartTotal").textContent=money(total);
+ el("checkoutTotal").textContent=money(total);
+ el("cartItems").innerHTML=cart.length?cart.map(x=>{
   const s=services.find(y=>y.id===x.id);
   return `<div class="cart-item">
-   <div>${s.emoji} ${s.name}<br><span class="small">${money(s.price)} د.ع × ${x.qty}</span></div>
-   <div><button class="btn secondary" onclick="changeQty(${x.id},-1)">−</button> ${x.qty}
-   <button class="btn secondary" onclick="changeQty(${x.id},1)">+</button></div>
+   <div><strong>${s.emoji} ${escapeHtml(s.name)}</strong><br><span class="small">${money(s.price)} د.ع × ${x.qty}</span></div>
+   <div class="qty">
+    <button class="btn secondary" onclick="changeQty(${x.id},-1)">−</button>
+    <b>${x.qty}</b>
+    <button class="btn secondary" onclick="changeQty(${x.id},1)">+</button>
+   </div>
   </div>`;
- }).join(""):"<p>السلة فارغة حالياً.</p>";
- saveCart();
+ }).join(""):"<p class='small'>السلة فارغة حالياً.</p>";
 }
-function changeQty(id,n){
- const item=cart.find(x=>x.id===id);if(!item)return;
- item.qty+=n;if(item.qty<=0)cart=cart.filter(x=>x.id!==id);
+function changeQty(id,delta){
+ const item=cart.find(x=>x.id===id);
+ if(!item)return;
+ item.qty+=delta;
+ if(item.qty<=0)cart=cart.filter(x=>x.id!==id);
+ if(item.qty>50)item.qty=50;
+ saveCart();updateCart();
+}
+function openCart(){
+ el("cartSection").classList.remove("hidden");
+ el("checkoutSection").classList.add("hidden");
  updateCart();
+ el("cartSection").scrollIntoView({behavior:"smooth"});
 }
-function showCart(){
- $("cartSection").classList.remove("hidden");$("checkoutSection").classList.add("hidden");
- updateCart();$("cartSection").scrollIntoView({behavior:"smooth"});
-}
-function hideCart(){$("cartSection").classList.add("hidden");}
+function closeCart(){el("cartSection").classList.add("hidden")}
 function showCheckout(){
- if(!cart.length){alert("السلة فارغة");return;}
- $("checkoutSection").classList.remove("hidden");
- $("checkoutSection").scrollIntoView({behavior:"smooth"});
+ if(!cart.length){alert("السلة فارغة");return}
+ el("checkoutSection").classList.remove("hidden");
+ el("checkoutSection").scrollIntoView({behavior:"smooth"});
 }
-function hideCheckout(){$("checkoutSection").classList.add("hidden");}
+function hideCheckout(){el("checkoutSection").classList.add("hidden")}
+function normalizePhone(v){return String(v||"").replace(/[^\d+]/g,"")}
+async function readJson(response){
+ const text=await response.text();
+ try{return JSON.parse(text)}
+ catch{throw new Error("استجابة الخادم غير مفهومة. تأكد من نشر كود Worker الصحيح.")}
+}
 
-// إرسال الطلب إلى Cloudflare Worker ثم تخزينه في D1
-$("orderForm").addEventListener("submit",async function(e){
+async function submitOrder(e){
  e.preventDefault();
- if(!cart.length){alert("السلة فارغة");return;}
- const btn=$("submitOrderBtn");
- btn.disabled=true;btn.textContent="جارٍ إرسال الطلب...";
- $("orderMessage").innerHTML="";
+ if(!cart.length){message("orderMessage","السلة فارغة","error");return}
+ const btn=el("submitOrder");
+ btn.disabled=true;
+ btn.textContent="جارٍ إرسال الطلب...";
  const payload={
-  customer_name:$("customerName").value.trim(),
-  phone:$("customerPhone").value.trim(),
-  city:$("customerCity").value,
-  details:$("orderDetails").value.trim(),
-  items:cart.map(x=>{
-   const s=services.find(y=>y.id===x.id);
-   return {id:s.id,name:s.name,qty:x.qty,price:s.price};
-  }),
-  total:cartTotal()
+  customer_name:el("customerName").value.trim(),
+  phone:normalizePhone(el("customerPhone").value),
+  city:el("customerCity").value,
+  details:el("orderDetails").value.trim(),
+  items:cart.map(x=>({id:x.id,qty:x.qty}))
  };
  try{
-  const API_URL = "https://forsa-api.8sg7hg7dwz.workers.dev";
-   method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)
+  const response=await fetch(apiUrl("/api/orders"),{
+   method:"POST",
+   headers:{"Content-Type":"application/json"},
+   body:JSON.stringify(payload)
   });
-  const data=await response.json();
-  if(!response.ok||!data.success)throw new Error(data.message||"تعذر تسجيل الطلب");
-  const orderId=data.order_id;
-  cart=[];updateCart();
-  $("orderForm").reset();
-  showMessage("orderMessage",`تم استلام طلبك بنجاح. رقم الطلب: ${orderId}. احتفظ بهذا الرقم لمتابعة طلبك.`,"notice success");
-  $("trackId").value=orderId;
- }catch(error){
-  showMessage("orderMessage",error.message==="Failed to fetch"?"تعذر الاتصال بالخادم. تحقق من الإنترنت وحاول مجدداً.":error.message,"notice danger");
+  const data=await readJson(response);
+  if(!response.ok||!data.success)throw new Error(data.message||"تعذر إرسال الطلب");
+  cart=[];
+  saveCart();
+  updateCart();
+  el("orderForm").reset();
+  el("orderMessage").innerHTML=`<div class="notice success">تم استلام طلبك بنجاح. رقم الطلب: <strong>${escapeHtml(data.order_id)}</strong><br>احتفظ برقم الطلب ورقم هاتفك لمتابعته.</div>`;
+  el("trackId").value=data.order_id;
+  hideCheckout();
+  el("orderMessage").scrollIntoView({behavior:"smooth"});
+ }catch(err){
+  message("orderMessage",err.message||"تعذر الاتصال بالخادم. حاول مرة أخرى.","error");
  }finally{
-  btn.disabled=false;btn.textContent="إرسال الطلب";
+  btn.disabled=false;
+  btn.textContent="إرسال الطلب";
  }
-});
-
-// متابعة الطلب من قاعدة البيانات
-async function trackOrder(){
- const id=$("trackId").value.trim();
- const phone=$("trackPhone").value.trim();
- if(!id||!phone){showMessage("trackResult","أدخل رقم الطلب ورقم الهاتف أولاً.","notice danger");return;}
- const btn=$("trackBtn");btn.disabled=true;btn.textContent="جارٍ البحث...";
- $("trackResult").innerHTML="";
- try{
-  const url=`${API_URL}/api/orders?id=${encodeURIComponent(id)}&phone=${encodeURIComponent(phone)}`;
-  const response=await fetch(url);
-  const data=await response.json();
-  if(!response.ok||!data.success)throw new Error(data.message||"لم يتم العثور على الطلب");
-  const o=data.order;
-  const itemNames=Array.isArray(o.items)?o.items.map(x=>`${escapeHTML(x.name)} × ${escapeHTML(x.qty)}`).join("، "):"";
-  $("trackResult").innerHTML=`<div class="notice">
-   رقم الطلب: <strong>${escapeHTML(o.id)}</strong><br>
-   الحالة: <strong>${escapeHTML(o.status)}</strong><br>
-   المجموع: ${money(o.total)} د.ع<br>
-   الخدمات: ${itemNames}<br>
-   التاريخ: ${escapeHTML(new Date(o.created_at).toLocaleString("ar-IQ"))}
-  </div>`;
- }catch(error){
-  showMessage("trackResult",error.message==="Failed to fetch"?"تعذر الاتصال بالخادم. حاول مجدداً.":error.message,"notice danger");
- }finally{btn.disabled=false;btn.textContent="متابعة";}
 }
 
-// الإدارة: الرمز لا يُحفظ في الملف أو LocalStorage
-async function adminLogin(){
- const token=prompt("أدخل ADMIN_TOKEN الذي أنشأته في Cloudflare:");
+async function trackOrder(e){
+ e.preventDefault();
+ const btn=el("trackButton");
+ btn.disabled=true;
+ btn.textContent="جارٍ البحث...";
+ el("trackResult").innerHTML="";
+ try{
+  const u=new URL("/api/orders",API_BASE);
+  u.searchParams.set("id",el("trackId").value.trim());
+  u.searchParams.set("phone",normalizePhone(el("trackPhone").value));
+  const response=await fetch(u.toString());
+  const data=await readJson(response);
+  if(!response.ok||!data.success)throw new Error(data.message||"لم يتم العثور على الطلب");
+  const o=data.order;
+  el("trackResult").innerHTML=`<div class="notice">
+   رقم الطلب: <strong>${escapeHtml(o.id)}</strong><br>
+   الحالة: <span class="status">${escapeHtml(o.status)}</span><br>
+   المجموع: ${money(o.total)} د.ع<br>
+   التاريخ: ${escapeHtml(new Date(o.created_at).toLocaleString("ar-IQ"))}
+   <hr>الخدمات: ${(o.items||[]).map(x=>`${escapeHtml(x.name)} × ${Number(x.qty)}`).join("، ")}
+  </div>`;
+ }catch(err){
+  message("trackResult",err.message||"تعذر الاتصال بالخادم.","error");
+ }finally{
+  btn.disabled=false;
+  btn.textContent="متابعة";
+ }
+}
+
+function adminLogin(){
+ const token=prompt("أدخل رمز الإدارة (ADMIN_TOKEN):");
  if(!token)return;
  adminToken=token.trim();
- try{
-  await loadAdminOrders();
-  $("adminArea").classList.remove("hidden");
-  $("adminLogoutBtn").classList.remove("hidden");
-  $("adminArea").scrollIntoView({behavior:"smooth"});
- }catch(error){
-  adminToken="";
-  alert(error.message||"فشل تسجيل الدخول. تحقق من رمز الإدارة.");
- }
+ loadAdminOrders();
 }
 function adminLogout(){
  adminToken="";
- $("adminArea").classList.add("hidden");
- $("adminLogoutBtn").classList.add("hidden");
- $("adminOrders").innerHTML="";
+ el("adminArea").classList.add("hidden");
+ el("adminLogout").classList.add("hidden");
+ el("adminOrders").innerHTML="";
+}
+async function adminFetch(path,options={}){
+ return fetch(apiUrl(path),{
+  ...options,
+  headers:{
+   ...(options.headers||{}),
+   Authorization:"Bearer "+adminToken,
+   ...(options.body?{"Content-Type":"application/json"}:{})
+  }
+ });
 }
 async function loadAdminOrders(){
- if(!adminToken)throw new Error("سجل الدخول إلى الإدارة أولاً.");
- $("adminOrders").innerHTML='<p class="muted">جارٍ تحميل الطلبات...</p>';
- const response=await fetch(`${API_URL}/api/admin/orders`,{
-  headers:{"Authorization":`Bearer ${adminToken}`}
- });
- const data=await response.json();
- if(!response.ok||!data.success)throw new Error(data.message||"تعذر تحميل الطلبات");
- renderAdmin(data.orders||[]);
-}
-function renderAdmin(orders){
- if(!orders.length){$("adminOrders").innerHTML="<p>لا توجد طلبات مسجلة حتى الآن.</p>";return;}
- $("adminOrders").innerHTML=orders.map(o=>`
-  <div class="admin-order">
-   <strong>${escapeHTML(o.customer_name)}</strong> - ${escapeHTML(o.phone)}<br>
-   رقم الطلب: ${escapeHTML(o.id)}<br>
-   المحافظة: ${escapeHTML(o.city)}<br>
-   التفاصيل: ${escapeHTML(o.details||"لا توجد")}<br>
-   الخدمات: ${(Array.isArray(o.items)?o.items:[]).map(x=>`${escapeHTML(x.name)} × ${escapeHTML(x.qty)}`).join("، ")}<br>
-   المجموع: ${money(o.total)} د.ع<br>
-   الحالة الحالية: <strong>${escapeHTML(o.status)}</strong>
-   <label for="status-${escapeHTML(o.id)}">تغيير الحالة</label>
-   <select id="status-${escapeHTML(o.id)}" onchange="changeStatus('${encodeURIComponent(o.id)}',this.value)">
-    ${["جديد","قيد التنفيذ","مكتمل","ملغي"].map(s=>`<option value="${s}" ${o.status===s?"selected":""}>${s}</option>`).join("")}
-   </select>
-   <p class="small">${escapeHTML(new Date(o.created_at).toLocaleString("ar-IQ"))}</p>
-  </div>`).join("");
-}
-async function changeStatus(encodedId,status){
  if(!adminToken)return;
- const id=decodeURIComponent(encodedId);
+ const box=el("adminOrders");
+ box.innerHTML="<p class='small'>جارٍ تحميل الطلبات...</p>";
  try{
-  const response=await fetch(`${API_URL}/api/admin/orders/${encodeURIComponent(id)}`,{
+  const response=await adminFetch("/api/admin/orders");
+  const data=await readJson(response);
+  if(!response.ok||!data.success)throw new Error(data.message||"تعذر الدخول");
+  el("adminArea").classList.remove("hidden");
+  el("adminLogout").classList.remove("hidden");
+  box.innerHTML=data.orders.length?data.orders.map(o=>`
+   <div class="panel">
+    <strong>${escapeHtml(o.customer_name)}</strong> — ${escapeHtml(o.phone)}<br>
+    رقم الطلب: ${escapeHtml(o.id)}<br>
+    المحافظة: ${escapeHtml(o.city)}<br>
+    الخدمات: ${(o.items||[]).map(x=>`${escapeHtml(x.name)} × ${Number(x.qty)}`).join("، ")}<br>
+    المجموع: ${money(o.total)} د.ع<br>
+    التفاصيل: ${escapeHtml(o.details||"—")}<br>
+    الحالة:
+    <select onchange="updateOrderStatus('${escapeHtml(o.id)}',this.value)">
+     ${["جديد","قيد التنفيذ","مكتمل","ملغي"].map(s=>`<option ${o.status===s?"selected":""}>${s}</option>`).join("")}
+    </select>
+    <p class="small">${escapeHtml(new Date(o.created_at).toLocaleString("ar-IQ"))}</p>
+   </div>`).join(""):"<p>لا توجد طلبات حتى الآن.</p>";
+ }catch(err){
+  box.innerHTML=`<p class="error">${escapeHtml(err.message||"حدث خطأ")}</p>`;
+  adminToken="";
+ }
+}
+async function updateOrderStatus(id,status){
+ try{
+  const response=await adminFetch("/api/admin/orders/"+encodeURIComponent(id),{
    method:"PATCH",
-   headers:{"Content-Type":"application/json","Authorization":`Bearer ${adminToken}`},
    body:JSON.stringify({status})
   });
-  const data=await response.json();
+  const data=await readJson(response);
   if(!response.ok||!data.success)throw new Error(data.message||"تعذر تحديث الحالة");
-  alert("تم تحديث حالة الطلب بنجاح");
-  await loadAdminOrders();
- }catch(error){alert(error.message||"حدث خطأ أثناء تحديث الحالة");}
+  alert("تم تحديث حالة الطلب");
+  loadAdminOrders();
+ }catch(err){
+  alert(err.message||"حدث خطأ أثناء التحديث");
+ }
 }
+function clearSearch(){el("searchInput").value="";renderServices()}
+
+el("filters").addEventListener("click",e=>{
+ const b=e.target.closest("[data-cat]");
+ if(!b)return;
+ activeCategory=b.dataset.cat;
+ renderFilters();
+ renderServices();
+});
+el("searchInput").addEventListener("input",renderServices);
+el("orderForm").addEventListener("submit",submitOrder);
+el("trackForm").addEventListener("submit",trackOrder);
 
 renderFilters();
 renderServices();

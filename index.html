@@ -277,7 +277,7 @@ $("orderForm").addEventListener("submit",async function(e){
   total:cartTotal()
  };
  try{
-  const response=await fetch(`${API_URL}/api/orders`,{
+  const API_URL = "https://forsa-api.8sg7hg7dwz.workers.dev";
    method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)
   });
   const data=await response.json();

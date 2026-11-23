@@ -6,7 +6,7 @@ export default {
       "Access-Control-Allow-Methods": "GET, POST, PATCH, OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type, Authorization"
     };
-    
+  
     const json = (data, status = 200) =>
       new Response(JSON.stringify(data), {
         status,
